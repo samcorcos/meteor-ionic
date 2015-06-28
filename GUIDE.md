@@ -215,7 +215,7 @@ To create Ionic style tabs you need to wrap your tabs into an `ionTabs` componen
 
 ### ionList
 
-To make an Ionic style list wrap your content in a `ionList` block template. 
+To make an Ionic style list wrap your content in a `ionList` block template.
 
 ```
 {{#ionContent}}
@@ -362,3 +362,47 @@ Then attach it to a `button` or `a` element by passing in the name of the templa
 ```
 <button data-ion-modal="myModal">Open Modal</button>
 ```
+
+## Cards
+
+The `ionCard` component creates an ionic card. Inside of the card, you will want an `ionItem`. You can also pass in `list` as a class. The basic syntax for a card is:
+
+```
+<template name="myCard">
+  {{#ionCard}}
+    {{#ionItem}}
+      <p>Ion card content goes here</p>
+    {{/ionItem}}
+  {{/ionCard}}
+</template>
+```
+
+## Swipe Cards
+
+The `ionSwipeCard` component allows you to perform gestures on a card, just like you can with the Angular directive. It uses HammerJS for the gesture functionality. The basic structure is:
+
+```
+<template name="mySwipeCard">
+  {{#ionSwipeCard templateGestures=templateGestures}}
+    {{#ionItem}}
+      <p>Swipe card content goes here</p>
+    {{/ionItem}}
+  {{/ionSwipeCard}}
+</template>
+```
+
+You must pass in a `templateGestures` object from your template helpers. An example helper looks like this:
+
+```
+Template.mySwipeCard.helpers({
+  templateGestures: function() {
+    return {
+      'swipeleft .card': function (e,t) {
+        alert("Swiping left!");
+      }
+    }
+  }
+})
+```
+
+The syntax for gestures is the same as the syntax for template events, with the gesture, followed by the selector, followed by a function.
