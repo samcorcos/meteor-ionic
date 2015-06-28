@@ -11,7 +11,7 @@ Cordova.depends({
 
 Package.onUse(function(api) {
   api.versionsFrom("1.0");
-  api.use(["templating", "underscore", "fastclick", "iron:router@1.0.0", "tracker", "session"], "client");
+  api.use(["templating", "underscore", "fastclick", "iron:router@1.0.0", "tracker", "session", "hammer:hammer@2.0.4_2"], "client");
 
   api.addFiles([
     "vendor/snap.js",
@@ -29,6 +29,9 @@ Package.onUse(function(api) {
 
     "components/ionBody/ionBody.html",
     "components/ionBody/ionBody.js",
+
+    "components/ionCard/ionCard.html",
+    "components/ionCard/ionCard.js",
 
     "components/ionContent/ionContent.html",
     "components/ionContent/ionContent.js",
